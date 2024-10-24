@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         DOCKERHUB_CREDENTIALS_ID = 'docker-hub-credentials'
-        DOCKERHUB_REPO = 'mikt/localized_greeting'
+        DOCKERHUB_REPO = 'mikt90/localized_greeting'
         DOCKER_IMAGE_TAG = 'latest'
     }
 
