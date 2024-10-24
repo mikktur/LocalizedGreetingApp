@@ -4,7 +4,7 @@ pipeline {
     environment {
         DOCKERHUB_CREDENTIALS_ID = 'docker-hub-credentials'
         DOCKERHUB_REPO = 'mikt90/localized_greeting'
-        DOCKER_IMAGE_TAG = 'latest'
+        DOCKER_IMAGE_TAG = 'latest2'
     }
 
     stages {
