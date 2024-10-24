@@ -10,27 +10,22 @@ public class LocalizedGreeting {
         System.out.println("1. English");
         System.out.println("2. French");
         System.out.println("3. Spanish");
+        System.out.println("4. Farsi");
 
         Scanner scanner = new Scanner(System.in);
         int choice = scanner.nextInt();
 
         // Set the locale based on user's choice
-        Locale locale;
-        switch (choice) {
-            case 1:
-                locale = new Locale("en", "US");
-                break;
-            case 2:
-                locale = new Locale("fr", "FR");
-                break;
-            case 3:
-                locale = new Locale("es", "ES");
-                break;
-            default:
+        Locale locale = switch (choice) {
+            case 1 -> new Locale("en", "US");
+            case 2 -> new Locale("fr", "FR");
+            case 3 -> new Locale("es", "ES");
+            case 4 -> new Locale("fa", "IR");
+            default -> {
                 System.out.println("Invalid choice. Defaulting to English.");
-                locale = new Locale("en", "US");
-                break;
-        }
+                yield new Locale("en", "US");
+            }
+        };
 
         // Load the resource bundle for the selected locale
         ResourceBundle messages = ResourceBundle.getBundle("MessagesBundle", locale);
